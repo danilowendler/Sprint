@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Fonte alterada para Orbitron */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(beproimg.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 26px;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    padding: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.promo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.promo-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 1s forwards;
+}
+
+.plan {
+    margin-top: 20px;
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    padding: 10px 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 1.5s forwards;
+}
+
+.plan span {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.price {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 2s forwards;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    color: white;
+    border: none;
+    border-radius: 11px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 2.5s forwards;
+}
+
+button:hover {
+    background-color: #ff2266;
+}
+
+#details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .promo-content h1 {
+        font-size: 36px;
+    }
+
+    .plan span {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-content h1 {
+        font-size: 28px;
+    }
+
+    .plan {
+        padding: 10px 30px;
+    }
+
+    .plan span {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

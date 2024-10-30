@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../assets/login.css">
+</head>
+<body class="body">
+    <div class="background"></div>
+    <form onsubmit="validateLogin(event)">
+        <p align="left"> Login <input type="text" id="username" size="30" maxlength="50" required></p>
+        <p align="left"> Senha <input type="password" id="password" size="10" maxlength="16" required></p><br>
+        <button type="submit"> Entrar </button> <br><br>
+        Não tem conta? <a href="cadastro.html"> Clique Aqui! </a> 
+        <br><br>
+        <p>Criar Conta <input type="radio" name="conta" value="Criar Conta">
+        Não Criar Conta <input type="radio" name="conta" value="Não Criar Conta"></p>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BE-Pro Membership</title>
+    <link rel="stylesheet" href="../assets/bepro.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="ranking.html">RANKING</a></li>
+                <li><a href="squad.html">My Squad</a></li>
+                <li><a href="bepro.html">BE PRO</a></li>
+                <li><a href="perfil.html">MY PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="promo-section">
+        <div class="promo-content">
+            <h1>BE PART OF THE TEAM</h1>
+            <div class="plan">
+                <br>
+                <span>BE-pro</span>
+                <br>
+            </div>
+            <div class="price">
+                <span>$19,00 per month</span>
+                <br>
+            </div>
+            <button id="more-details-btn">More Details</button>
+            <div id="details" class="hidden">
+                <p>Join the BE-Pro team and get exclusive content, behind-the-scenes access, and more for just $19 a month!</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Seleciona o botão e a div de detalhes
+        const moreDetailsBtn = document.getElementById('more-details-btn');
+        const detailsDiv = document.getElementById('details');
+        // Adiciona um event listener ao botão
+        moreDetailsBtn.addEventListener('click', function () {
+            // Verifica se a div está oculta e alterna a visibilidade
+            if (detailsDiv.classList.contains('hidden')) {
+                detailsDiv.classList.remove('hidden');
+                detailsDiv.style.display = 'block';
+                moreDetailsBtn.textContent = 'Hide Details';
+            } else {
+
+                detailsDiv.classList.add('hidden');
+                detailsDiv.style.display = 'none';
+                moreDetailsBtn.textContent = 'More Details';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

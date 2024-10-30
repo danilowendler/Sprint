@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Squad</title>
+    <link rel="stylesheet" href="../assets/squad.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html"><img class="f1mode-logo" src="../assets/fe.png"></a></li>
+                <li><a href="../f1mode/index.html"><img class="f1mode-logo" src="../assets/f1logo.png"></a></li>
+                <li><a href="ranking.html">RANKING</a></li>
+                <li><a href="squad.html">My Squad</a></li>
+                <li><a href="bepro.html">BE PRO</a></li>
+                <li><a href="perfil.html">MY PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <h1 class="title">SQUAD</h1>
+
+        <div class="info-container">
+            <div class="card driver-card">
+                <h2>My Driver</h2>
+                <p>Driver - 1</p>
+                <p>Points: 233</p>
+                <img src="../assets/piloto.png" alt="Driver Image">
+            </div>
+
+            <div class="card car-card">
+                <h2>My Car</h2>
+                <p>Car - 1</p>
+                <p>Points: 236</p>
+                <img src="../assets/car.png" alt="Car Image">
+            </div>
+        </div>
+
+        <div class="score-container">
+            <div class="week-score-container">
+                <div class="week-score-box">
+                    <h2>Week Score</h2>
+                    <p>10/06/2024 :</p>
+                    <div class="score-box">
+                        <p>469 points</p>
+                    </div>
+                </div>
+
+                <div class="total-points-box">
+                    <h2>Total Points : 569 (100 points to waste)</h2>
+                    <p>Friends</p>
+                    <ul id="friend-list">
+                        <li>1 - Renato 523</li>
+                        <li>2 - Me 469</li>
+                        <li>3 - Lucas 433</li>
+                        <li>4 - Pedro 292</li>                     
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        
+        <div class="add-player-section">
+            <button class="add-player-btn" id="add-player-button">Add Player</button>
+            <form id="add-player-form" style="display: none;">
+                <input type="text" id="player-name" placeholder="Player Name" required>
+                <input type="text" id="player-position" placeholder="Player Position" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        
+        <br>
+
+        <div class="feedback">
+            <textarea id="feedback-text" rows="4" placeholder="Leave your feedback..."></textarea>
+            <button id="submit-feedback">Submit Feedback</button>
+        </div>
+
+        <div class="notification" id="notification">Notification</div>
+    </div>
+
+    <script>
+        // Add Player
+        const addPlayerButton = document.getElementById("add-player-button");
+        const addPlayerForm = document.getElementById("add-player-form");
+        const squadList = document.getElementById("friend-list");
+
+        addPlayerButton.addEventListener("click", () => {
+            addPlayerForm.style.display = addPlayerForm.style.display === "none" ? "block" : "none";
+        });
+
+        addPlayerForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const playerName = document.getElementById("player-name").value;
+            const playerPosition = document.getElementById("player-position").value;
+
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                <span class="player-name">${playerName}</span> - 
+                <span class="player-position">${playerPosition}</span>
+            `;
+            squadList.appendChild(listItem);
+
+            addPlayerForm.style.display = "none";
+            document.getElementById("player-name").value = '';
+            document.getElementById("player-position").value = '';
+            showNotification("Player added to squad!");
+        });
+
+        // Sort Friends by Points
+        const sortFriendsButton = document.getElementById("sort-friends");
+        sortFriendsButton.addEventListener("click", () => {
+            const friendList = document.getElementById("friend-list");
+            let friends = Array.from(friendList.querySelectorAll("li"));
+            friends.sort((a, b) => parseInt(b.textContent.split(" ")[2]) - parseInt(a.textContent.split(" ")[2]));
+            friendList.innerHTML = "";
+            friends.forEach(friend => friendList.appendChild(friend));
+            showNotification("Friend list sorted by points!");
+        });
+
+        // Submit Feedback
+        const submitFeedbackButton = document.getElementById("submit-feedback");
+        submitFeedbackButton.addEventListener("click", () => {
+            const feedbackText = document.getElementById("feedback-text").value;
+            if (feedbackText.trim() !== "") {
+                showNotification("Feedback submitted. Thank you!");
+                document.getElementById("feedback-text").value = "";
+            } else {
+                showNotification("Please write some feedback before submitting.");
+            }
+        });
+
+        // Show Notification
+        function showNotification(message) {
+            const notification = document.getElementById("notification");
+            notification.textContent = message;
+            notification.style.display = "block";
+            notification.style.opacity = "1";
+
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                setTimeout(() => {
+                    notification.style.display = "none";
+                }, 500);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

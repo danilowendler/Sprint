@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula E - Mahindra</title>
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html"><img class="f1mode-logo" src="assets/fe.png"></a></li>
+                <li><a href="f1mode/index.html"><img class="f1mode-logo" src="assets/f1logo.png"></a></li>
+                <li><a href="pages/ranking.html">RANKING</a></li>
+                <li><a href="pages/squad.html">My Squad</a></li>
+                <li><a href="pages/bepro.html">BE PRO</a></li>
+                <li><a href="pages/perfil.html">MY PROFILE</a></li>
+                <li><a href="pages/login.html">FAÇA SEU LOGIN!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slider de Destaques -->
+    <div class="slider">
+        <div class="slide active" style="background-image: url('assets/m4623_crop169006_2560x1440_1696869794549A.jpg');">
+            <p>DRIVE TO SURVIVE.</p>
+        </div>
+        <div class="slide" style="background-image: url('assets/nio-formula-e-uhd-4k-wallpaper.jpg');">
+            <p>BREAK THE LIMITS</p>
+        </div>
+        <div class="slide" style="background-image: url('assets/formula-e-wqhd-1440p-wallpaper.jpg');">
+            <p>WELCOME TO THE FUTURE</p>
+        </div>
+    </div>
+
+
+    <!-- Contagem Regressiva -->
+    <div id="countdown"></div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-container">
+        <div class="left-box nextrace">
+            <h2> WATCH HERE: </h2>
+            <iframe width="100%" height="715" src="https://www.youtube.com/embed/CEyc585qtr4?si=EUmhzmLHEeGlgO3O"
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            <br>
+        </div>
+
+        
+        <div class="right-box">
+            <div class="box piloto">
+                <h2>MY DRIVER</h2>
+                <p><strong>DRIVER -</strong> NICK DE VRIES<br><strong>POINTS:</strong> 233</p>
+                <img src="assets/piloto.png" alt="Driver">
+            </div>
+
+            <div class="box carro">
+                <h2>MY CAR</h2>
+                <p><strong>CAR-</strong> MAHINDRA RACING <br><strong>POINTS:</strong> 290</p>
+                <img class="" src="assets/car.png" alt="Car">
+            </div>
+
+            <div class="box ranking">
+                <div class="top-score">
+                    <h2>Top Score</h2>
+                    <!-- Box para TERRORCB e 800 Points -->
+                    <div class="top-score-box">
+                        <p>AYRTON SENNA</p>
+                        <p>800 POINTS</p>
+                    </div>
+                </div>
+
+                <div class="friends-ranking">
+                    <h2>Friends</h2>
+                    <!-- Box para Your Points e ranking de amigos -->
+                    <div class="friends-ranking-box">
+                        <p>Your Points: 469</p>
+                        <p>1 - Renato: 523</p>
+                        <p>2 - Me: 469</p>
+                        <p>3 - Lucas: 433</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Botão de Voltar ao Topo -->
+    <button id="backToTop">RETURN TO TOP</button>
+    <footer class="footer">E-FANTASY Todos os direitos reservados</footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

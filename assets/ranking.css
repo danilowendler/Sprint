@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Fonte alterada para Orbitron */
+    background-color: #dfdede;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    padding: 20px 0;
+    text-align: center;
+    max-height: 50px;
+}
+
+nav ul.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul.menu li a:hover {
+    color: #bdbcbc;
+}
+
+/* Contêiner principal */
+.ranking-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+/* Ranking e Friends Ranks */
+.ranking, .friends-ranks {
+    flex: 1 1 48%;
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    border-radius: 12px;
+    box-shadow: 0 9px 18px rgba(0, 0, 0, 0.1);
+    padding: 36px;
+    transition: transform 0.3s ease;
+}
+
+.ranking:hover, .friends-ranks:hover {
+    transform: translateY(-10px);
+}
+
+.ranking h2, .friends-ranks h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos de Best Driver e Best Car */
+.best-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.best-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tamanho específico para a imagem do piloto */
+.best-driver img {
+    width: 220px; /* Aumentado para o piloto */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* Tamanho específico para a imagem do carro */
+.best-car img {
+    width: 360px; /* Reduzido para o carro */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* Friends Ranks */
+.friends-ranks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.friends-ranks li {
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+.friends-ranks li:hover {
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+}
+
+/* Botão dinâmico */
+button.add-friend {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.add-friend:hover {
+    background: linear-gradient(to right, #38b3ff, #0a58ab);
+}
+
+.f1mode-logo {
+    height: 60px;
+    margin-top: -18px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .ranking, .friends-ranks {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul.menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .best-driver img,
+    .best-car img {
+        width: 80px;
+    }
+
+    .ranking-container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .best-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .best-item img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+}

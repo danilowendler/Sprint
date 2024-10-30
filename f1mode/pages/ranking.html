@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="../assets/ranking.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="../../index.html"><img class="f1mode-logo" src="../assets/fe.png"></a></li>
+                <li><a href="../index.html"><img class="f1mode-logo" src="../assets/f1logo.png"></a></li>
+                <li><a href="ranking.html">RANKING</a></li>
+                <li><a href="squad.html">My Squad</a></li>
+                <li><a href="bepro.html">BE PRO</a></li>
+                <li><a href="perfil.html">MY PROFILE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ranking-container">
+        <div class="ranking">
+            <h2>RANKING OF THE WEEK</h2>
+            
+            <br>
+
+            <div class="best-item">
+                <img src="../assets/leclerc.png" alt="Driver Image">
+                <div class="best-item-info">
+                    <h3>BEST DRIVER</h3>
+                    <p>Driver - CHARLES LECLERC 16</p>
+                    <p>POINTS: 444</p>
+                </div>
+            </div>
+            
+            <br>
+
+            <div class="best-car">
+                <img src="../assets/ferrari.png" alt="Car Image">
+                <div class="best-item-info">
+                    <h3>BEST CAR</h3>
+                    <p>Car - SCUDERIA FERRARI</p>
+                    <p>POINTS: 690</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="friends-ranks">
+            <h2>FRIENDS RANKING</h2>
+            <ul id="friends-list">
+                <li>
+                    <span>1 - Renato</span> 
+                    <span>523 points</span>
+                </li>
+                <li>
+                    <span>2 - Me</span> 
+                    <span>499 points</span>
+                </li>
+                <li>
+                    <span>3 - Lucas</span> 
+                    <span>433 points</span>
+                </li>
+                <li>
+                    <span>4 - Vitor</span> 
+                    <span>432 points</span>
+                </li>
+                <li>
+                    <span>5 - Pedro</span> 
+                    <span>431 points</span>
+                </li>
+                <li>
+                    <span>6 - Danilo</span> 
+                    <span>430 points</span>
+                </li>
+            </ul>
+            <button class="add-friend" onclick="addFriend()">Add New Friend</button>
+        </div>
+    </div>
+
+    <script>
+        // Filtro dinâmico para Friends Ranks
+        document.getElementById('filter').addEventListener('input', function () {
+            const filterValue = this.value.toLowerCase();
+            const friendsList = document.querySelectorAll('#friends-list li');
+
+            friendsList.forEach(function (friend) {
+                if (friend.textContent.toLowerCase().includes(filterValue)) {
+                    friend.style.display = 'flex';
+                } else {
+                    friend.style.display = 'none';
+                }
+            });
+        });
+
+        // Função para adicionar novos amigos ao ranking
+        function addFriend() {
+            const newFriendName = prompt("Enter the friend's name:");
+            const newFriendPoints = prompt("Enter the friend's points:");
+            if (newFriendName && newFriendPoints) {
+                const friendsList = document.getElementById('friends-list');
+                const newFriendItem = document.createElement('li');
+                newFriendItem.innerHTML = `<span>${newFriendName}</span> <span>${newFriendPoints} points</span>`;
+                friendsList.appendChild(newFriendItem);
+            }
+        }
+    </script>
+</body>
+
+</html>

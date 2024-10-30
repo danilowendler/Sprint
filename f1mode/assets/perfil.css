@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #49001c;
+    font-family: 'Orbitron', sans-serif; /* Fonte alterada para Orbitron */
+    transition: background-color 0.5s ease;
+    margin: 0;
+    padding: 0;
+}
+
+/* Restante do código existente */
+.f1mode-logo {
+    height: 60px;
+    margin-top: -18px;
+}
+
+header {
+    background: linear-gradient(to right, #680028, #ff0040);
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul.menu li a:hover {
+    color: #bdbcbc;
+}
+
+.profile-container {
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fafafad3;
+    border: 1px solid #000000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-header {
+    background: linear-gradient(to right, #680028, #ff0040);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-info {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.profile-info label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile-info input[type="text"], .profile-info input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.profile-info button[type="submit"] {
+    background: linear-gradient(to right, #680028, #ff0040);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 2s ease;
+}
+
+.profile-info button[type="submit"]:hover {
+    background: linear-gradient(to right, #680028, #fa6767);
+}
+
+.profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff0037;
+}
+
+.profile-picture input[type="file"] {
+    margin-top: 10px;
+}
+
+.recent-activities {
+    margin-top: 30px;
+    background: linear-gradient(to right, #680028, #ff0040);    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.recent-activities h2 {
+    color: #ffffff;
+}
+
+.recent-activities ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.recent-activities ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    nav ul.menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-info input[type="text"], .profile-info input[type="email"] {
+        padding: 8px;
+    }
+
+    .profile-info button[type="submit"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul.menu li a {
+        font-size: 16px;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-container {
+        padding: 10px;
+    }
+}

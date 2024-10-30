@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../assets/cadastro.css">
+</head>
+<body>
+    <div class="background"></div>
+    <form onsubmit="handleCadastro(event)">
+        <p align="left"> Nome <input type="text" id="nome" size="40" maxlength="50" required></p>
+        <p align="left">Email <input type="text" id="email" size="50" required></p>
+        <p align="left"> Senha <input type="password" id="senha" size="10" maxlength="16" required></p>
+        <p align="left"> Confirmar Senha <input type="password" id="confirmarSenha" size="10" maxlength="16" required></p>
+        <p align="left"> CPF <input type="text" id="cpf" size="10" required></p>
+        <button type="submit">CONCLUIR</button>
+        <button type="reset">EXCLUIR ESTA CONTA</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
